@@ -202,7 +202,7 @@ function EstudioPage() {
                   <ResumePreview profile={current} />
                 </DialogContent>
               </Dialog>
-              <Button className="w-full" onClick={() => window.print()}><FileDown className="h-4 w-4" />Exportar PDF</Button>
+              <Button className="w-full" onClick={() => window.print()}><FileDown className="h-4 w-4" />Imprimir / Exportar PDF</Button>
               <Button variant="secondary" className="w-full" onClick={() => { navigator.clipboard.writeText(resumeToText(current)); toast.success("Copiado para a área de transferência"); }}>
                 <Copy className="h-4 w-4" />Copiar texto (Gupy, Workday...)
               </Button>
