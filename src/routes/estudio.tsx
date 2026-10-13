@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { CheckCircle2, Copy, FileDown, Sparkles, XCircle } from "lucide-react";
+import { CheckCircle2, Copy, FileDown, ShieldCheck, Sparkles, XCircle } from "lucide-react";
 import { toast } from "sonner";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -83,6 +84,14 @@ function EstudioPage() {
 
   return (
     <div className="mx-auto max-w-7xl space-y-4">
+      <Alert className="no-print border-highlight-border bg-highlight/40">
+        <ShieldCheck className="h-4 w-4 text-highlight-foreground" />
+        <AlertTitle className="text-sm font-semibold text-highlight-foreground">Compromisso Ético</AlertTitle>
+        <AlertDescription className="text-sm text-highlight-foreground/90">
+          O MatchCV AI otimiza a legibilidade e o ranqueamento das suas experiências reais para filtros ATS. O sistema
+          não inventa nem adiciona qualificações que você não possui.
+        </AlertDescription>
+      </Alert>
       <div className="no-print flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold">Estúdio ATS & Otimizador</h1>

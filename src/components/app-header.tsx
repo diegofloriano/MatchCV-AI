@@ -1,5 +1,6 @@
 import { Bell } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -14,6 +15,7 @@ export function AppHeader() {
   return (
     <header className="no-print sticky top-0 z-20 flex h-14 items-center gap-3 border-b bg-background/90 px-3 backdrop-blur">
       <SidebarTrigger />
+      <BrandLogo className="hidden md:flex" />
       <div className="hidden items-center gap-2 md:flex">
         <span className="text-xs text-muted-foreground">Perfil</span>
         <Progress value={pct} className="h-2 w-28" />

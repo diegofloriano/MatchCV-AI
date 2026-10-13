@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Briefcase, FileUser, KanbanSquare, LayoutDashboard, ScanSearch } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader,
   SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar,
@@ -20,9 +21,8 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" className="no-print">
       <SidebarHeader>
-        <div className="flex items-center gap-2 px-1 py-2">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">M</div>
-          {!collapsed && <span className="font-display text-lg font-bold text-foreground">MatchCV <span className="text-primary">AI</span></span>}
+        <div className="flex items-center px-1 py-2">
+          <BrandLogo showWordmark={!collapsed} />
         </div>
       </SidebarHeader>
       <SidebarContent>
