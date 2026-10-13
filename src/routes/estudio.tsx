@@ -211,7 +211,10 @@ function EstudioPage() {
                   <ResumePreview profile={current} />
                 </DialogContent>
               </Dialog>
-              <Button className="w-full" onClick={() => window.print()}><FileDown className="h-4 w-4" />Imprimir / Exportar PDF</Button>
+              <div className="grid grid-cols-2 gap-2">
+                <Button onClick={() => { toast.info("Na janela de impressão, escolha \"Salvar como PDF\""); setTimeout(() => window.print(), 50); }}><FileDown className="h-4 w-4" />Baixar PDF</Button>
+                <Button variant="outline" onClick={async () => { try { const { downloadResumeDocx } = await import("@/lib/export-docx"); await downloadResumeDocx(current); toast.success("DOCX gerado"); } catch { toast.error("Não foi possível gerar o DOCX"); } }}><FileDown className="h-4 w-4" />Baixar DOCX</Button>
+              </div>
               <Button variant="secondary" className="w-full" onClick={() => { navigator.clipboard.writeText(resumeToText(current)); toast.success("Copiado para a área de transferência"); }}>
                 <Copy className="h-4 w-4" />Copiar texto (Gupy, Workday...)
               </Button>
