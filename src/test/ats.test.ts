@@ -36,7 +36,7 @@ describe("ATS rewrite", () => {
     expect(o.experiences.flatMap((e) => e.bullets).some((b) => b.startsWith("Atuei:"))).toBe(false);
   });
   it("rewrites weak openers with an impact verb", () => {
-    expect(polishBullet("Participei da criação do design system")).toBe("Colaborei da criação do design system".replace("Colaborei da", "Colaborei da"));
+    expect(polishBullet("Participei da criação do design system")).toBe("Colaborei na criação do design system");
     expect(polishBullet("Escrevi testes unitários")).toBe("Elaborei testes unitários");
   });
   it("leaves bullets without a known weak verb untouched", () => {

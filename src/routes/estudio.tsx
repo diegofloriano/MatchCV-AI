@@ -14,7 +14,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScoreGauge } from "@/components/ats/ScoreGauge";
 import { ResumePreview } from "@/components/resume/ResumePreview";
 import type { Profile } from "@/data/mockData";
-import { atsChecklist, keywordMatch, optimizeResume, resumeToText } from "@/lib/ats";
+import { atsChecklist, optimizeResume, resumeToText, suggestionFor } from "@/lib/ats";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/estudio")({
@@ -201,7 +202,7 @@ function EstudioPage() {
                   <ResumePreview profile={current} />
                 </DialogContent>
               </Dialog>
-              <Button className="w-full" onClick={() => window.print()}><FileDown className="h-4 w-4" />Exportar PDF</Button>
+              <Button className="w-full" onClick={() => window.print()}><FileDown className="h-4 w-4" />Imprimir / Exportar PDF</Button>
               <Button variant="secondary" className="w-full" onClick={() => { navigator.clipboard.writeText(resumeToText(current)); toast.success("Copiado para a área de transferência"); }}>
                 <Copy className="h-4 w-4" />Copiar texto (Gupy, Workday...)
               </Button>

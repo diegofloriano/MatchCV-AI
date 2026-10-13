@@ -41,7 +41,11 @@ export const IMPACT_VERBS = [
 
 /** Weak openers → impact-verb rewrite, keeping the first-person agreement of the sentence. */
 const REWRITES: [RegExp, string][] = [
-  [/^participei (da|do|de|das|dos|na|no) /i, "Colaborei $1 "],
+  [/^participei da /i, "Colaborei na "],
+  [/^participei do /i, "Colaborei no "],
+  [/^participei das /i, "Colaborei nas "],
+  [/^participei dos /i, "Colaborei nos "],
+  [/^participei (de|em|na|no) /i, "Colaborei em "],
   [/^ajudei (a|na|no|com) /i, "Contribuí $1 "],
   [/^trabalhei (com|em|no|na) /i, "Atuei $1 "],
   [/^fui respons[aá]vel (por|pela|pelo) /i, "Coordenei "],
