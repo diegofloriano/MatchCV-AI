@@ -14,7 +14,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScoreGauge } from "@/components/ats/ScoreGauge";
 import { ResumePreview } from "@/components/resume/ResumePreview";
 import type { Profile } from "@/data/mockData";
-import { atsChecklist, keywordMatch, optimizeResume, resumeToText } from "@/lib/ats";
+import { atsChecklist, optimizeResume, resumeToText, suggestionFor } from "@/lib/ats";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useStore } from "@/lib/store";
 
 export const Route = createFileRoute("/estudio")({
